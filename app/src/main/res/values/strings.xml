@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">recipeAppApi</string>
+    <string name="txt_no_result">result not found</string>
+    <string name="search">حبث في تطبيق</string>
+</resources>
