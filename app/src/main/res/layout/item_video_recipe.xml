@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="videoItem"
+            type="com.example.recipeappapi.data.model.VideoRecipeModel" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:orientation="vertical"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/overlay_background"
+
+                >
+
+                <ImageView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha=".3"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/photo"
+                    app:imageUrl="@{videoItem.imageVideo}"
+                    />
+
+            </FrameLayout>
+
+
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_play_circle_outline"
+                android:background="@android:color/transparent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/recipe_video"
+                android:text="@{videoItem.titleVideo}"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:layout_alignParentBottom="true"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:paddingBottom="10dp" />
+
+            <TextView
+                android:id="@+id/views"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/number"
+                android:text="@{videoItem.viewVideo}"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:layout_alignParentRight="true"
+                android:textStyle="bold"
+                android:paddingRight="10dp"
+                android:drawableRight="@drawable/ic_remove_red_eye"
+                android:drawablePadding="5dp"
+                android:paddingTop="10dp" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/date"
+                android:text="@{videoItem.dateVideo}"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:layout_alignParentLeft="true"
+                android:textStyle="bold"
+                android:paddingRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:drawableRight="@drawable/ic_today"
+                android:drawablePadding="5dp"
+                android:paddingTop="10dp" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

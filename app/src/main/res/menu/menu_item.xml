@@ -6,7 +6,13 @@
         android:icon="@drawable/ic_search"
         app:showAsAction="ifRoom|collapseActionView"
         app:actionViewClass="androidx.appcompat.widget.SearchView" />
-<item android:id="@+id/grid_item" android:title="grid list" app:showAsAction="ifRoom" android:icon="@drawable/ic_grid" android:visible="true" />
-<item android:id="@+id/list_item" android:title=" list view " app:showAsAction="ifRoom" android:icon="@drawable/ic_view_list" android:visible="false"/>
+
+    <item android:id="@+id/action_favorite" app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_favorite_gray"
+        android:title="@string/favorite"/>
+
+    <item android:id="@+id/action_home" android:title="@string/home_page" android:icon="@drawable/ic_home_black"
+        app:showAsAction="ifRoom"/>
+
 
 </menu>

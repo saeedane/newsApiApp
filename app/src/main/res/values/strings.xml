@@ -1,5 +1,22 @@
 <resources>
-    <string name="app_name">recipeAppApi</string>
+    <string name="app_name"> تطبيق وصفات محلات </string>
     <string name="txt_no_result">result not found</string>
-    <string name="search">حبث في تطبيق</string>
+    <string name="search"> بحث </string>
+    <string name="category_name">تصنيفات </string>
+    <string name="all_category"> مشاهدة الكل </string>
+    <string name="moust_recipe"> وصفات أكثر تقيم  </string>
+    <string name="recipe_video"> وصفات بالفيديو </string>
+    <string name="title_recipe">cake chocolate</string>
+    <string name="favorite"> المفضلة </string>
+    <string name="home_page"> الرئسية </string>
+    <string name="number">10 </string>
+    <string name="date">27-05-2021</string>
+    <string name="recipe_shop">  وصفات محلات</string>
+    <string name="video">فيديو</string>
+    <string name="url"><![CDATA[https://islamweb.net/ar/library/index.php?page=bookcontents&idfrom=5089&idto=5089&bk_no=50&ID=5183]]></string>
+    <string name="description">الوصفة</string>
+    <string name="ingredients">المكونات</string>
+    <string name="instructions">الطريقة</string>
+    <string name="recipe_choose">  أكثر مشاهدة </string>
+    <string name="img_no">لايوجد أي بيانات في مفضلة</string>
 </resources>
