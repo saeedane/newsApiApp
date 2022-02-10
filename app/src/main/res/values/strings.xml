@@ -19,4 +19,9 @@
     <string name="instructions">الطريقة</string>
     <string name="recipe_choose">  أكثر مشاهدة </string>
     <string name="img_no">لايوجد أي بيانات في مفضلة</string>
+    <string name="title_setting">الاعدادات</string>
+    <string name="change_langouge">تغير اللغة</string>
+    <string name="English">الانجلزية</string>
+    <string name="Arabic">العربية</string>
+    <string name="switchmodes">الوضع المضلم</string>
 </resources>

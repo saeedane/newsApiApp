@@ -36,10 +36,6 @@ public class MainFragmentRecipe extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         RecyclerView rv_rating = view.findViewById(R.id.rv_recipe_rating);
         ArrayList<RecipeModel> recipeModels = new ArrayList<>();
-        recipeModels.add(new RecipeModel("وصفة جديدة  ","https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/courgette_pakoras_83738_16x9.jpg"));
-        recipeModels.add(new RecipeModel("وصفة جديدة  ","https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/courgette_pakoras_83738_16x9.jpg"));
-        recipeModels.add(new RecipeModel("وصفة جديدة  ","https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/courgette_pakoras_83738_16x9.jpg"));
-        recipeModels.add(new RecipeModel("وصفة جديدة  ","https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/courgette_pakoras_83738_16x9.jpg"));
 
         RecyclerAdapterRecipeRating adapterRecipeRating = new RecyclerAdapterRecipeRating(getContext(),recipeModels);
         rv_rating.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));

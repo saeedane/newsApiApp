@@ -10,38 +10,33 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.recipeappapi.adapter.RecyclerMultiNews;
+import com.example.recipeappapi.data.model.CategoryModel;
 import com.example.recipeappapi.fragments.HomeActivityFragment;
 import com.example.recipeappapi.fragments.MainCategoryFragment;
 import com.example.recipeappapi.fragments.SubCategoryFragment;
 import com.example.recipeappapi.fragments.VideoRecipeFragment;
 
-public class showFragmentViewPager extends FragmentPagerAdapter {
-    private Context myContext;
-    int totalTabs;
+import java.util.ArrayList;
+import java.util.List;
 
-    public showFragmentViewPager(Context context, FragmentManager fm, int totalTabs) {
-        super(fm);
-        myContext = context;
-        this.totalTabs = totalTabs;
+public class showFragmentViewPager extends FragmentPagerAdapter {
+
+    List<Fragment> fragments = new ArrayList<>();
+    List<String> fragmentTitle = new ArrayList<>();
+
+    public showFragmentViewPager(FragmentManager fm) {
+        super(fm,BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+
     }
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
-
-        switch (position) {
-            case 0:
-                HomeActivityFragment homeFragment = new HomeActivityFragment();
-                return homeFragment;
-
-            default:
-                SubCategoryFragment subCategoryFragment = new SubCategoryFragment();
-
-                Bundle args = new Bundle();
-                args.putInt("id", 2);
-                subCategoryFragment.setArguments(args);
-                return subCategoryFragment ;
+        if (position == 0 ){
+            return new HomeActivityFragment();
         }
+
+        return fragments.get(position);
 
 
     }
@@ -49,7 +44,13 @@ public class showFragmentViewPager extends FragmentPagerAdapter {
     // this counts total number of tabs
     @Override
     public int getCount() {
-        return totalTabs;
+        return fragments.size() ;
+    }
+
+    public  void addFragment(Fragment fragment,String title){
+        fragments.add(fragment);
+        fragmentTitle.add(title);
+
     }
 
 }

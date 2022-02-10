@@ -47,7 +47,6 @@ public class SubCategoryFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-         id = getArguments().getInt("id");
 
         return inflater.inflate(R.layout.fragment_sub_category,container,false);
     }
@@ -58,6 +57,7 @@ public class SubCategoryFragment extends Fragment {
         rv_sub_category = view.findViewById(R.id.rv_sub_category);
         recipeModelArrayList = new ArrayList<>();
         swipeRefreshLayout = view.findViewById(R.id.swr_sub_category);
+        id = getArguments().getInt("id");
         Toast.makeText(view.getContext(),"id" + id,Toast.LENGTH_LONG).show();
 
         getRecipe();
@@ -85,7 +85,7 @@ public class SubCategoryFragment extends Fragment {
         swipeRefreshLayout.setRefreshing(true);
 
         categoryViewModel  = ViewModelProviders.of(this).get(RecipeDataViewModel.class);
-        categoryViewModel.getPostsByCategoryRepository(2).observe(this, new Observer<ResponseByCategory>() {
+        categoryViewModel.getPostsByCategoryRepository(id).observe(this, new Observer<ResponseByCategory>() {
             @Override
             public void onChanged(ResponseByCategory responseByCategory) {
                 recipeModelArrayList.clear();

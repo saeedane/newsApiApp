@@ -65,6 +65,9 @@ public class RecyclerMultiNews extends RecyclerView.Adapter<RecyclerMultiNews.Vi
 
     @Override
     public int getItemCount() {
+        if (newsList.size() > 6){
+            return 6;
+        }
         return newsList.size();
     }
 

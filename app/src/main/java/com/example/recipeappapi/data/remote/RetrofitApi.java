@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.recipeappapi.data.model.response.ResponseByCategory;
+import com.example.recipeappapi.data.model.response.ResponseLastNews;
 import com.example.recipeappapi.data.model.response.ResponseModel;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public interface RetrofitApi {
     Call<ResponseModel> getAllCategory();
     @GET("posts-by-category")
     Call<ResponseByCategory> getPostsByCategory(@Query("cid") int id);
-
+    @GET("homepage_api")
+    Call<ResponseLastNews> getLastNews();
 
 }

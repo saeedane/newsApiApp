@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:title="@string/change_langouge"
+        android:icon="@drawable/ic_grid"
+
+        >
+
+        <CheckBoxPreference
+            android:title="@string/English"
+            android:key="english"
+            android:summary="@string/category_name"
+            />
+
+
+        <CheckBoxPreference
+            android:title="@string/Arabic"
+            android:key="arabic"
+            android:summary="@string/category_name"
+            />
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/switchmodes"
+        app:allowDividerAbove="true"
+       >
+    <SwitchPreference
+        android:key="switchmode"
+        android:title="Light Mode Off"
+        android:defaultValue=" off"
+        />
+
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -17,6 +17,8 @@ public  class RecipeModel  implements Parcelable  {
     private String content_body;
     @SerializedName("youtube_video_url")
     private String video_url;
+    @SerializedName("category_name")
+    private  String news_category_name;
     @SerializedName("posts_date")
     private String date;
 
@@ -25,10 +27,6 @@ public  class RecipeModel  implements Parcelable  {
     public RecipeModel() {
     }
 
-    public RecipeModel(String content_title, String content_image) {
-        this.content_title = content_title;
-        this.content_image = content_image;
-    }
 
     protected RecipeModel(Parcel in) {
         content_id = in.readInt();
@@ -36,6 +34,7 @@ public  class RecipeModel  implements Parcelable  {
         content_image = in.readString();
         content_body = in.readString();
         video_url = in.readString();
+        news_category_name = in.readString();
         date = in.readString();
     }
 
@@ -63,8 +62,10 @@ public  class RecipeModel  implements Parcelable  {
         parcel.writeString(content_image);
         parcel.writeString(content_body);
         parcel.writeString(video_url);
+        parcel.writeString(news_category_name);
         parcel.writeString(date);
     }
+
 
     public int getContent_id() {
         return content_id;
@@ -73,6 +74,7 @@ public  class RecipeModel  implements Parcelable  {
     public String getContent_title() {
         return content_title;
     }
+
 
     public String getContent_image() {
         return content_image;
@@ -84,6 +86,9 @@ public  class RecipeModel  implements Parcelable  {
 
     public String getVideo_url() {
         return video_url;
+    }
+    public String getNews_category_name() {
+        return news_category_name;
     }
 
     public String getDate() {

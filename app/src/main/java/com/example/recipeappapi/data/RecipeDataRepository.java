@@ -11,6 +11,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.recipeappapi.data.locale.DatabaseRecipeFavorite;
 import com.example.recipeappapi.data.model.FavoriteModel;
 import com.example.recipeappapi.data.model.response.ResponseByCategory;
+import com.example.recipeappapi.data.model.response.ResponseLastNews;
 import com.example.recipeappapi.data.model.response.ResponseModel;
 import com.example.recipeappapi.data.remote.RetrofitApi;
 import com.example.recipeappapi.data.remote.RetrofitService;
@@ -20,6 +21,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class RecipeDataRepository {
 
@@ -37,6 +39,7 @@ public class RecipeDataRepository {
 
 
     private Call<ResponseModel> categoryModelCall;
+    private  Call<ResponseLastNews> lastNewsResponse;
     private Call<ResponseByCategory> responseByCategoryCall;
     private static final String TAG = RecipeDataRepository.class.getSimpleName();
     private static DatabaseRecipeFavorite databaseRecipeFavorite;
@@ -65,6 +68,7 @@ public class RecipeDataRepository {
     private RecipeDataRepository(Context context) {
         // Create a new WeatherInfo call using Retrofit API interface
         categoryModelCall = RetrofitService.getClient().create(RetrofitApi.class).getAllCategory();
+        lastNewsResponse = RetrofitService.getClient().create(RetrofitApi.class).getLastNews();
         databaseRecipeFavorite = DatabaseRecipeFavorite.getInstance(context);
 
 
@@ -106,6 +110,37 @@ public class RecipeDataRepository {
 
     }
 
+    public LiveData<ResponseLastNews> getAllLastNews() {
+
+        MutableLiveData<ResponseLastNews> responseModelLiveData = new MutableLiveData<>();
+        lastNewsResponse.clone().enqueue(new Callback<ResponseLastNews>() {
+            @Override
+            public void onResponse(Call<ResponseLastNews> call, Response<ResponseLastNews> response) {
+
+
+                if (response != null) {
+
+                    if (response.body().getStatus() == 200) {
+                        responseModelLiveData.setValue(response.body());
+
+
+                    }
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseLastNews> call, Throwable t) {
+                Log.v(TAG, "error response : " + t.getMessage());
+            }
+
+        });
+
+
+        return responseModelLiveData;
+
+    }
 
 
 
